@@ -2,10 +2,6 @@ import os
 import logging
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
-from dotenv import load_dotenv
-
-# Загружаем переменные окружения
-load_dotenv()
 
 # Настройка логирования
 logging.basicConfig(
