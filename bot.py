@@ -14,8 +14,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Токен бота из переменных окружения
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+# Токен бота
+BOT_TOKEN = '8387272971:AAHYV1IeSlL8tAxlCtus_N64kJvccuoOD88'
 
 # База данных с информацией для МТА Провинция РП (2025)
 HELP_DATA = {
