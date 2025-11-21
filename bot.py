@@ -1080,7 +1080,7 @@ def main():
         logger.error("BOT_TOKEN не найден! Создайте файл .env и добавьте BOT_TOKEN=ваш_токен")
         return
     
-    # Создаем приложение
+    # Создаем приложение с настройками таймаутов
     application = Application.builder().token(BOT_TOKEN).build()
     
     # Регистрируем обработчики
@@ -1089,9 +1089,24 @@ def main():
     application.add_handler(CommandHandler("info", info_command))
     application.add_handler(CallbackQueryHandler(button_handler))
     
-    # Запускаем бота
+    # Запускаем бота с обработкой ошибок
     logger.info("Бот запущен!")
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    try:
+        application.run_polling(
+            allowed_updates=Update.ALL_TYPES,
+            drop_pending_updates=True,
+            close_loop=False
+        )
+    except Exception as e:
+        logger.error(f"Ошибка при запуске бота: {e}")
+        logger.info("Попытка переподключения...")
+        try:
+            application.run_polling(
+                allowed_updates=Update.ALL_TYPES,
+                drop_pending_updates=True
+            )
+        except Exception as e2:
+            logger.error(f"Критическая ошибка: {e2}")
 
 
 if __name__ == '__main__':
