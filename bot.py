@@ -1033,12 +1033,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         reply_markup = InlineKeyboardMarkup(keyboard)
         await query.edit_message_text(
             '📞 **Связаться с администрацией МТА Провинция:**\n\n'
-            '💬 **Discord сервер:** [Присоединиться](https://discord.gg/provincia)\n'
-            '🌐 **Форум:** [provincia-rp.ru](https://provincia-rp.ru)\n'
-            '📧 **Email:** support@provincia-rp.ru\n'
+            '🌐 **Официальный сайт:** [gtaprovince.ru](https://gtaprovince.ru/)\n'
+            '💬 **Форум:** [forum.gtaprovince.ru](https://forum.gtaprovince.ru/)\n'
+            '📧 **Email:** jst.project.province@gmail.com\n'
+            '👥 **Группа VK:** [vk.com/js_team_gta](https://vk.com/js_team_gta)\n'
             '🎮 **В игре:** `/report` или `/ticket`\n\n'
             '⏰ **Время ответа:** обычно в течение 24 часов\n\n'
-            '⚠️ **Важно:** Это фанатский бот. Для официальной поддержки обращайтесь напрямую к администрации сервера.',
+            '⚠️ **Важно:** Это фанатский бот. Для официальной поддержки обращайтесь через [официальный сайт](https://gtaprovince.ru/), [форум](https://forum.gtaprovince.ru/) или email.',
             reply_markup=reply_markup,
             parse_mode='Markdown',
             disable_web_page_preview=True
